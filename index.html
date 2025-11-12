@@ -1,0 +1,1636 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>P.K. Waterproofing Solutions Pvt. Ltd.</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  
+  <style>
+    body {
+      font-family: "Inter", sans-serif;
+    }
+
+    .overlay {
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.1));
+    }
+
+    /* Slider Styles */
+    .slider-container {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .slider-wrapper {
+      display: flex;
+      transition: transform 0.5s ease-in-out;
+    }
+
+    .slide {
+      min-width: 100%;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    @media (min-width: 640px) {
+      .slide {
+        min-width: 50%;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .slide {
+        min-width: 33.333%;
+      }
+    }
+
+    @media (min-width: 1280px) {
+      .slide {
+        min-width: 25%;
+      }
+    }
+
+    .slider-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(2, 62, 74, 0.8);
+      color: white;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s;
+    }
+
+    .slider-arrow:hover {
+      background: rgba(2, 62, 74, 1);
+    }
+
+    .slider-arrow.left {
+      left: -20px;
+    }
+
+    .slider-arrow.right {
+      right: -20px;
+    }
+
+    /* Show arrows on all screen sizes */
+    .slider-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    @media (min-width: 768px) {
+      .slider-dots {
+        display: none;
+      }
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d1d5db;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .dot.active {
+      background: #023e4a;
+      width: 24px;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+
+<body class="bg-gray-50">
+
+  <!-- ✅ Navbar -->
+  <nav
+    class="fixed top-3 left-1/2 transform -translate-x-1/2 z-50 w-[95%] bg-white/20 backdrop-blur-md shadow-md flex items-center justify-between px-5 py-2 border border-white/20 rounded-full">
+    <div class="flex items-center space-x-3">
+      <img src="/Images/logo 2.png" alt="Logo" class="h-12 w-auto" />
+      <!-- <h1 class="text-white font-semibold leading-tight text-sm">
+        P.K. WATER PROOFING<br />
+        <span class="text-xs font-light tracking-wider">SOLUTIONS PVT. LTD.</span>
+      </h1> -->
+    </div>
+
+    <div class="hidden md:flex items-center space-x-6">
+      <a href="#services" class="text-black text-sm font-medium hover:text-gray-200 transition">Services</a>
+      <a href="#projects" class="text-black text-sm font-medium hover:text-gray-200 transition">Projects</a>
+      <a href="#about" class="text-black text-sm font-medium hover:text-gray-200 transition">About</a>
+      <a href="#contact" class="text-black text-sm font-medium hover:text-gray-200 transition">Contact</a>
+    </div>
+
+    <div class="hidden md:block">
+      <a href="#order"
+        class="bg-indigo-800 hover:bg-indigo-900 text-white px-5 py-2 rounded-full font-medium text-sm shadow-md">Book
+        Your Order</a>
+    </div>
+
+    <button id="menuToggle" class="md:hidden text-gray-800 focus:outline-none">
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </nav>
+
+  <!-- ✅ Mobile Menu -->
+  <div id="mobileMenu"
+    class="hidden fixed top-20 left-1/2 transform -translate-x-1/2 z-40 w-[90%] bg-white/90 backdrop-blur-md rounded-2xl shadow-lg py-4">
+    <div class="flex flex-col items-center space-y-3 text-gray-800">
+      <a href="#services" class="text-sm font-medium hover:text-indigo-800 transition">Services</a>
+      <a href="#projects" class="text-sm font-medium hover:text-indigo-800 transition">Projects</a>
+      <a href="#about" class="text-sm font-medium hover:text-indigo-800 transition">About</a>
+      <a href="#contact" class="text-sm font-medium hover:text-indigo-800 transition">Contact</a>
+      <a href="#order"
+        class="bg-indigo-800 hover:bg-indigo-900 text-white px-5 py-2 rounded-full font-medium text-sm shadow-md transition">Book
+        Your Order</a>
+    </div>
+  </div>
+
+  <!-- ✅ Hero Section -->
+  <section class="relative h-[60vh] md:h-screen flex items-center">
+    <video autoplay muted loop playsinline
+      class="absolute inset-0 w-full h-full object-cover transition-all duration-500">
+      <source src="/Video/pk .mp4" type="video/mp4" />
+    </video>
+
+    <div class="overlay absolute inset-0"></div>
+
+    <div class="relative z-10 text-white pl-6 md:pl-24 max-w-2xl mt-4 md:mt-10">
+      <h2 class="text-lg md:text-3xl font-light mb-0.5 md:mb-1">Protected for the</h2>
+      <h1 class="text-3xl md:text-[6rem] font-extrabold leading-none mb-2 md:mb-6">Future</h1>
+      <p class=" md:text-lg text-gray-200 mb-3 md:mb-8 leading-tight md:leading-normal">
+        We brings over two decades of proven expertise in building protection. From terraces to basements, we deliver
+        precision-engineered waterproofing solutions using premium materials, skilled workmanship, and industry-tested
+        techniques.
+      </p>
+      <div class="flex flex-wrap gap-2 md:gap-4">
+        <button
+          class="bg-indigo-800 hover:bg-indigo-900 text-white px-4 py-2 md:px-6 md:py-3 rounded-full font-medium shadow-lg transition text-sm md:text-base">
+          Book Your Order
+        </button>
+        <button
+          class="border border-white/70 hover:bg-white/10 text-white px-4 py-2 md:px-6 md:py-3 rounded-full font-medium transition text-sm md:text-base">
+          Explore Our Project
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Info Cards -->
+  <section class="bg-white shadow-lg rounded-full -mt-6 relative z-20 p-1 md:p-3 mx-4 md:mx-12">
+    <div class="grid grid-cols-3 divide-x divide-gray-300 text-center">
+      <div class="py-0.5 md:py-2">
+        <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Trained</h3>
+        <p class="text-indigo-800 font-medium text-xs md:text-base">Professionals</p>
+      </div>
+      <div class="py-0.5 md:py-2">
+        <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Supervised</h3>
+        <p class="text-indigo-800 font-medium text-xs md:text-base">Works</p>
+      </div>
+      <div class="py-0.5 md:py-2">
+        <h3 class="text-gray-800 text-sm md:text-lg font-semibold">Stringent</h3>
+        <p class="text-indigo-800 font-medium text-xs md:text-base">Safety Precools</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Services Section -->
+  <section id="services" class="py-12 sm:py-16 md:py-20 bg-[#f9fafb]">
+    <div class="w-full">
+      <div class="text-center mb-8 sm:mb-10 px-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#023e4a]">Our Services</h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+          We specialise in long-lasting waterproofing treatments for terraces, bathrooms and walls.
+        </p>
+      </div>
+
+      <!-- Slider Container -->
+      <div class="relative slider-container w-full px-4 sm:px-8">
+        <!-- Slider Wrapper -->
+        <div class="slider-wrapper" id="sliderWrapper">
+          <!-- Slide 1 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/services/exterior.png" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-3 sm:mb-4"
+                alt="Exterior Waterproofing" />
+              <h3 class="text-lg sm:text-xl font-semibold">Exterior Waterproofing</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-2">200+ Projects</p>
+              <p class="mt-2 sm:mt-3 text-slate-500 text-xs sm:text-sm">Durable and seamless waterproofing for terraces
+                and walls.</p>
+              <button onclick="showService('exterior')"
+                class="mt-3 sm:mt-4 bg-[#023e4a] text-white px-4 py-2 rounded-lg hover:bg-[#035766] text-sm transition w-full sm:w-auto">View
+                Photos</button>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/services/Bathroom.jpg" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-3 sm:mb-4"
+                alt="Bathroom Waterproofing" />
+              <h3 class="text-lg sm:text-xl font-semibold">Bathroom Waterproofing</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-2">350+ Projects</p>
+              <p class="mt-2 sm:mt-3 text-slate-500 text-xs sm:text-sm">Professional sealing and drainage systems to
+                prevent moisture damage.</p>
+              <button onclick="showService('bathroom')"
+                class="mt-3 sm:mt-4 bg-[#023e4a] text-white px-4 py-2 rounded-lg hover:bg-[#035766] text-sm transition w-full sm:w-auto">View
+                Photos</button>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/services/Epoxy.png" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-3 sm:mb-4"
+                alt="Wall Waterproofing" />
+              <h3 class="text-lg sm:text-xl font-semibold">Epoxy Flooring</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-2">250+ Projects</p>
+              <p class="mt-2 sm:mt-3 text-slate-500 text-xs sm:text-sm">Comprehensive protection against water seepage
+                and dampness.</p>
+              <button onclick="showService('epoxy')"
+                class="mt-3 sm:mt-4 bg-[#023e4a] text-white px-4 py-2 rounded-lg hover:bg-[#035766] text-sm transition w-full sm:w-auto">View
+                Photos</button>
+            </div>
+          </div>
+
+          <!-- Slide 4 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/Pressure.png" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-3 sm:mb-4"
+                alt="Terrace Waterproofing" />
+              <h3 class="text-lg sm:text-xl font-semibold">Pressure Grouting</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-2">300+ Projects</p>
+              <p class="mt-2 sm:mt-3 text-slate-500 text-xs sm:text-sm">Complete terrace solutions with long-lasting
+                protection.</p>
+              <button onclick="showService('pressure')"
+                class="mt-3 sm:mt-4 bg-[#023e4a] text-white px-4 py-2 rounded-lg hover:bg-[#035766] text-sm transition w-full sm:w-auto">View
+                Photos</button>
+            </div>
+          </div>
+
+          <!-- Slide 5 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="Images/services/PU.jpg" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-3 sm:mb-4"
+                alt="Basement Waterproofing" />
+              <h3 class="text-lg sm:text-xl font-semibold">PU Injection</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-2">180+ Projects</p>
+              <p class="mt-2 sm:mt-3 text-slate-500 text-xs sm:text-sm">Complete basement solutions with long-lasting
+                protection.</p>
+              <button onclick="showService('pu-injection')"
+                class="mt-3 sm:mt-4 bg-[#023e4a] text-white px-4 py-2 rounded-lg hover:bg-[#035766] text-sm transition w-full sm:w-auto">View
+                Photos</button>
+            </div>
+          </div>
+
+          <!-- Slide 6 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-2xl p-4 sm:p-6 shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="Images/services/Others.png" class="w-full h-32 sm:h-40 object-cover rounded-lg mb-3 sm:mb-4"
+                alt="Basement Waterproofing" />
+              <h3 class="text-lg sm:text-xl font-semibold">Other Waterproofing</h3>
+              <p class="text-xs sm:text-sm text-slate-600 mt-2">180+ Projects</p>
+              <p class="mt-2 sm:mt-3 text-slate-500 text-xs sm:text-sm">Complete basement solutions with long-lasting
+                protection.</p>
+              <button onclick="showService('other')"
+                class="mt-3 sm:mt-4 bg-[#023e4a] text-white px-4 py-2 rounded-lg hover:bg-[#035766] text-sm transition w-full sm:w-auto">View
+                Photos</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Previous Arrow -->
+        <button class="slider-arrow left" onclick="moveSlide(-1)" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Next Arrow -->
+        <button class="slider-arrow right" onclick="moveSlide(1)" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Slider Dots -->
+      <div class="slider-dots" id="sliderDots"></div>
+    </div>
+  </section>
+
+  <!-- ✅ Hidden Gallery (3 layers) -->
+  <section id="servicePhotos" class="hidden py-12 sm:py-16 md:py-20 bg-gradient-to-b from-slate-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <!-- Header with Back Button -->
+      <div class="flex items-center justify-between mb-6 sm:mb-8">
+        <button onclick="hidePhotos()"
+          class="flex items-center gap-2 text-slate-600 hover:text-[#023e4a] transition text-sm sm:text-base font-medium">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+          Back to Services
+        </button>
+      </div>
+
+      <h2 id="serviceTitle" class="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#023e4a] mb-8 sm:mb-10 text-center"></h2>
+
+      <!-- Filter Buttons (Categories) -->
+      <div class="flex flex-wrap justify-center gap-3 sm:gap-4 mb-8 sm:mb-12" id="categoryContainer">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Photo Grid -->
+      <div id="photoContainer" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <!-- Dynamically populated -->
+      </div>
+
+      <!-- Lightbox -->
+      <div id="lightbox" class="hidden fixed inset-0 bg-black/90 flex items-center justify-center z-50 p-4">
+        <img id="lightboxImg" src="" class="max-h-[90vh] max-w-[95vw] rounded-lg shadow-2xl object-contain" />
+        <button onclick="closeLightbox()"
+          class="absolute top-4 right-4 sm:top-6 sm:right-6 text-white text-3xl sm:text-4xl font-bold bg-white/20 hover:bg-white/30 backdrop-blur-sm rounded-full w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center transition">×</button>
+      </div>
+    </div>
+  </section>
+
+   <!-- About / Info -->
+  <section id="about" class="py-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h3 class="text-2xl font-bold text-[#023e4a]">About PK Waterproofing</h3>
+        <p class="mt-3 text-slate-600">PK Waterproofing Solution brings reliable waterproofing services backed by
+          experienced technicians and stringent safety protocols. We ensure long-term protection with quality materials
+          and supervised installation.</p>
+
+        <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <li class="bg-white p-4 rounded-lg shadow">
+            <div class="text-sm text-slate-500">10+ years</div>
+            <div class="font-semibold">Experience</div>
+          </li>
+          <li class="bg-white p-4 rounded-lg shadow">
+            <div class="text-sm text-slate-500">999+</div>
+            <div class="font-semibold">Projects</div>
+          </li>
+          <li class="bg-white p-4 rounded-lg shadow">
+            <div class="text-sm text-slate-500">Trained</div>
+            <div class="font-semibold">Professionals</div>
+          </li>
+          <li class="bg-white p-4 rounded-lg shadow">
+            <div class="text-sm text-slate-500">Safety</div>
+            <div class="font-semibold">Protocols</div>
+          </li>
+        </ul>
+      </div>
+
+      <div>
+        <img src="https://images.unsplash.com/photo-1529400971008-f566de0e6dfc?auto=format&fit=crop&w=1000&q=60"
+          alt="team" class="w-full rounded-2xl shadow-lg" />
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ✅ Projects Section -->
+  <section id="projects" class="py-12 sm:py-16 md:py-20 bg-gradient-to-b from-white to-[#f9feff]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8 sm:mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#023e4a]">Explore Our Projects</h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-4">
+          Showcasing our expertise through successfully completed waterproofing projects.
+        </p>
+      </div>
+
+      <!-- Slider Container -->
+      <div class="relative slider-container max-w-6xl mx-auto">
+        <!-- Slider Wrapper -->
+        <div class="slider-wrapper px-8" id="projectsSliderWrapper">
+          <!-- Project 1 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/Burj_Alhind-Banner.jpg" class="w-full h-48 object-cover" alt="Burj Alhind" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Burj Alhind</div>
+                <div class="text-sm text-slate-500">Karaparamba</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/Al-hind-builders.jpg" class="w-full h-48 object-cover"
+                alt="Al-Hind Builders" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Al-Hind Builders</div>
+                <div class="text-sm text-slate-500"> Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/ajfan-kottakkal.jpg" class="w-full h-48 object-cover" alt="Ajfan Kottakkal" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Ajfan</div>
+                <div class="text-sm text-slate-500">Kottakkal</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/bynsa.jpg" class="w-full h-48 object-cover" alt="Bynsa Developers" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Bynsa Developers</div>
+                <div class="text-sm text-slate-500">Wayanad</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 5 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/chest-hospital.webp" class="w-full h-48 object-cover" alt="Chest Hospital" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Chest Hospital</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 6 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/Contrast.webp" class="w-full h-48 object-cover" alt="Contrast" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Contrast</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 7 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/fathima-hospital.jpg" class="w-full h-48 object-cover"
+                alt="Fathima Hospital" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Fathima Hospital</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 8 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/gvt-kinasheri.png" class="w-full h-48 object-cover" alt="GVT Kinasheri" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">GOVT LP School</div>
+                <div class="text-sm text-slate-500">Kinasseri</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 9 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/hyson.jpg" class="w-full h-48 object-cover" alt="Hyson" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Hyson</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 10 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/k-hills.jpg" class="w-full h-48 object-cover" alt="K Hills" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">K-Hills</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 11 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/MIMS-kannur.jpg" class="w-full h-48 object-cover" alt="MIMS Kannur" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">MIMS Hospital</div>
+                <div class="text-sm text-slate-500">Kannur</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 12 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/santhi.jpg" class="w-full h-48 object-cover" alt="Santhi" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Santhi Hospital</div>
+                <div class="text-sm text-slate-500">Omassery</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 13 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/Sea Qeen.webp" class="w-full h-48 object-cover" alt="Sea Queen" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Sea Queen</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 14 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/tiara.png" class="w-full h-48 object-cover" alt="Tiara" />
+              <div class="p-4">
+                <div class="mt-2 font-semibold text-[#023e4a]">Tiara</div>
+                <div class="text-sm text-slate-500">Calicut</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 15 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/3d-1.png" class="w-full h-48 object-cover" alt="3D Project 1" />
+              <div class="p-4">
+                <!-- <div class="mt-2 font-semibold text-[#023e4a]"></div>
+                <div class="text-sm text-slate-500">3D Villa — Calicut</div>
+                <div class="mt-1 text-xs text-slate-400">Completed 2022</div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 16 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/3d-2.png" class="w-full h-48 object-cover" alt="3D Project 2" />
+              <div class="p-4">
+                <!-- <div class="text-sm text-slate-500">3D Complex — Kannur</div>
+                <div class="mt-2 font-semibold text-[#023e4a]">Residential Complex Waterproofing</div>
+                <div class="mt-1 text-xs text-slate-400">Completed 2022</div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 17 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/3d-3.png" class="w-full h-48 object-cover" alt="3D Project 3" />
+              <div class="p-4">
+                <!-- <div class="text-sm text-slate-500">3D Heights — Wayanad</div>
+                <div class="mt-2 font-semibold text-[#023e4a]">High-Rise Waterproofing</div>
+                <div class="mt-1 text-xs text-slate-400">Completed 2022</div> -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Project 18 -->
+          <div class="slide px-2">
+            <div
+              class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
+              <img src="/Images/projects/3d-4.png" class="w-full h-48 object-cover" alt="3D Project 4" />
+              <div class="p-4">
+                <!-- <div class="text-sm text-slate-500">3D Towers — Kozhikode</div>
+                <div class="mt-2 font-semibold text-[#023e4a]">Tower Waterproofing</div>
+                <div class="mt-1 text-xs text-slate-400">Completed 2022</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Previous Arrow -->
+        <button class="slider-arrow left" onclick="moveProjectSlide(-1)" aria-label="Previous">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Next Arrow -->
+        <button class="slider-arrow right" onclick="moveProjectSlide(1)" aria-label="Next">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Slider Dots -->
+      <div class="slider-dots" id="projectsSliderDots"></div>
+    </div>
+  </section>
+
+  <!-- ✅ Reviews Section -->
+  <section id="reviews" class="py-12 sm:py-16 md:py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-8 sm:mb-10">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#023e4a]">What Our Clients Say</h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto px-4">
+          Real reviews from our satisfied customers
+        </p>
+        <div class="mt-4 flex items-center justify-center gap-2">
+          <div class="flex items-center">
+            <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+            <svg class="w-5 h-5 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+          </div>
+          <span class="text-lg font-semibold text-[#023e4a]">4.9</span>
+          <span class="text-sm text-slate-500">• Based on Google Reviews</span>
+        </div>
+      </div>
+
+      <!-- Reviews Slider Container -->
+      <div class="relative slider-container max-w-6xl mx-auto">
+        <!-- Slider Wrapper -->
+        <div class="slider-wrapper px-8" id="reviewsSliderWrapper">
+          
+          <!-- Review 1 -->
+          <div class="slide px-2">
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg border border-slate-100 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-3">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">"Excellent waterproofing service! The team was professional and completed the work on time. No leakage issues since then. Highly recommended!"</p>
+              <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-[#023e4a] flex items-center justify-center text-white font-semibold">A</div>
+                <div>
+                  <div class="font-semibold text-[#023e4a]">Arun Kumar</div>
+                  <div class="text-xs text-slate-500">2 months ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 2 -->
+          <div class="slide px-2">
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg border border-slate-100 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-3">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">"Best waterproofing company in Malappuram! They solved our terrace leakage problem completely. Very satisfied with their service."</p>
+              <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-[#023e4a] flex items-center justify-center text-white font-semibold">S</div>
+                <div>
+                  <div class="font-semibold text-[#023e4a]">Shahana Beevi</div>
+                  <div class="text-xs text-slate-500">3 months ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 3 -->
+          <div class="slide px-2">
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg border border-slate-100 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-3">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">"Outstanding work on our bathroom waterproofing. The team was knowledgeable and used quality materials. Worth every penny!"</p>
+              <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-[#023e4a] flex items-center justify-center text-white font-semibold">R</div>
+                <div>
+                  <div class="font-semibold text-[#023e4a]">Ramesh Nair</div>
+                  <div class="text-xs text-slate-500">1 month ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 4 -->
+          <div class="slide px-2">
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg border border-slate-100 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-3">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">"Great experience with PK Waterproofing. They fixed our wall seepage issue efficiently. Professional team with excellent customer service."</p>
+              <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-[#023e4a] flex items-center justify-center text-white font-semibold">P</div>
+                <div>
+                  <div class="font-semibold text-[#023e4a]">Priya Menon</div>
+                  <div class="text-xs text-slate-500">4 weeks ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 5 -->
+          <div class="slide px-2">
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg border border-slate-100 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-3">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">"Highly professional and reliable service. They completed our commercial building waterproofing project within the timeline. Recommended!"</p>
+              <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-[#023e4a] flex items-center justify-center text-white font-semibold">M</div>
+                <div>
+                  <div class="font-semibold text-[#023e4a]">Mohammed Ashraf</div>
+                  <div class="text-xs text-slate-500">5 months ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Review 6 -->
+          <div class="slide px-2">
+            <div class="bg-gradient-to-br from-white to-slate-50 rounded-2xl p-6 shadow-lg border border-slate-100 h-full flex flex-col">
+              <div class="flex items-center gap-1 mb-3">
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+                <svg class="w-4 h-4 text-yellow-400 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z"/></svg>
+              </div>
+              <p class="text-slate-700 text-sm leading-relaxed mb-4 flex-grow">"Excellent work quality and reasonable pricing. They did waterproofing for our entire apartment complex. No complaints so far. Thank you PK team!"</p>
+              <div class="flex items-center gap-3 pt-3 border-t border-slate-200">
+                <div class="w-10 h-10 rounded-full bg-[#023e4a] flex items-center justify-center text-white font-semibold">D</div>
+                <div>
+                  <div class="font-semibold text-[#023e4a]">Deepa Thomas</div>
+                  <div class="text-xs text-slate-500">6 weeks ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Previous Arrow -->
+        <button class="slider-arrow left" onclick="moveReviewSlide(-1)" aria-label="Previous Review">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </button>
+
+        <!-- Next Arrow -->
+        <button class="slider-arrow right" onclick="moveReviewSlide(1)" aria-label="Next Review">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Slider Dots -->
+      <div class="slider-dots" id="reviewsSliderDots"></div>
+
+      <!-- Google Reviews Link -->
+      <div class="text-center mt-8">
+        <a href="https://www.google.com/search?q=PK+WATER+PROOFING+SOLUTIONS+PVT.+LTD+Reviews" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-2 px-6 py-3 bg-[#023e4a] text-white rounded-lg hover:bg-[#035766] transition shadow-md">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+            <path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+          </svg>
+          View All Reviews on Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- Contact -->
+  <section id="contact" class="py-16 bg-gradient-to-b from-[#f0fbff] to-white">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+      <div class="space-y-4">
+        <h3 class="text-2xl font-bold text-[#023e4a]">Get in touch</h3>
+        <p class="text-slate-600">Head Office & Branch details. Call or email to book a site inspection or ask for a
+          quote.</p>
+
+        <div class="mt-4 bg-white p-5 rounded-2xl shadow">
+          <div class="text-sm text-slate-500">Head Office</div>
+          <div class="font-semibold mt-1">PK Building 12/437, Karad Paramba, Malappuram - 673632</div>
+        </div>
+
+        <div class="mt-3 bg-white p-5 rounded-2xl shadow">
+          <div class="text-sm text-slate-500">Branch Office</div>
+          <div class="font-semibold mt-1">NH66, Pantheeramkavu, Opp. BSNL Office, Calicut</div>
+        </div>
+
+        <div class="mt-3 flex flex-col sm:flex-row gap-3">
+          <a href="tel:+917034266336" class="px-4 py-3 bg-white rounded-lg shadow inline-flex items-center gap-3">
+            <svg class="h-5 w-5 text-[#2b9db5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M22 16.92V21a1 1 0 0 1-1.11 1 19.86 19.86 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.86 19.86 0 0 1 2 3.11 1 1 0 0 1 3 2h4.09a1 1 0 0 1 1 .75c.12.67.35 1.33.67 1.95a1 1 0 0 1-.24 1.05L7.91 7.91a16 16 0 0 0 6 6l1.16-1.16a1 1 0 0 1 1.05-.24c.62.32 1.28.55 1.95.67a1 1 0 0 1 .75 1V22z" />
+            </svg>
+            <span>703 426 6336</span>
+          </a>
+          <a href="mailto:pkconstructionsolutions@gmail.com"
+            class="px-4 py-3 bg-white rounded-lg shadow inline-flex items-center gap-3">
+            <svg class="h-5 w-5 text-[#2b9db5]" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M3 8l9 6 9-6" />
+            </svg>
+            <span>pkconstructionsolutions@gmail.com</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="bg-white p-6 rounded-2xl shadow">
+        <div class="mb-4 p-3 bg-green-50 border border-green-200 rounded-lg">
+          <div class="flex items-center gap-2 text-green-700">
+            <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.785" />
+            </svg>
+            <span class="text-sm font-medium">Your request will be sent directly to our WhatsApp</span>
+          </div>
+        </div>
+        <form id="contactForm" class="space-y-4">
+          <div>
+            <label class="block text-sm text-slate-600">Name</label>
+            <input required type="text" name="name"
+              class="mt-2 w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-[#bfeef7]"
+              placeholder="Your name" />
+          </div>
+          <div>
+            <label class="block text-sm text-slate-600">Phone</label>
+            <input required type="tel" name="phone"
+              class="mt-2 w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-[#bfeef7]"
+              placeholder="Phone number" />
+          </div>
+          <!-- <div>
+            <label class="block text-sm text-slate-600">Service</label>
+            <select name="service" class="mt-2 w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-[#bfeef7]">
+              <option>Terrace Waterproofing</option>
+              <option>Bathroom Waterproofing</option>
+              <option>Wall Waterproofing</option>
+            </select>
+          </div> -->
+          <div>
+            <label class="block text-sm text-slate-600">Pincode</label>
+            <input required type="text" name="pincode"
+              class="mt-2 w-full rounded-lg border px-3 py-2 focus:ring-2 focus:ring-[#bfeef7]"
+              placeholder="Your pincode" />
+          </div>
+
+          <div class="flex items-center justify-between">
+            <button type="submit"
+              class="px-5 py-3 bg-gradient-to-r from-[#2b9db5] to-[#5bb7d9] text-white rounded-lg shadow flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.785" />
+              </svg>
+              Send Message
+            </button>
+            <div class="text-sm text-slate-500">Or call us at <a href="tel:+917034266336"
+                class="text-[#2b9db5] font-semibold">703 426 6336</a></div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ✅ Client Logos Section -->
+  <section id="clients" class="py-12 sm:py-16 bg-white overflow-hidden">
+    <div class="w-full">
+      <div class="text-center mb-8 sm:mb-10 px-4">
+        <h2 class="text-2xl sm:text-3xl font-bold text-[#023e4a]">Our Trusted Clients</h2>
+        <p class="mt-2 text-sm sm:text-base text-slate-600 max-w-2xl mx-auto">
+          Proud to work with leading brands and organizations
+        </p>
+      </div>
+
+      <!-- Logos Auto-Slider (Full Width) -->
+      <div class="relative w-full overflow-hidden px-4 sm:px-8">
+        <div class="slider-wrapper" id="logosSliderWrapper" style="transition: transform 0.5s ease-in-out;">
+          
+          <!-- Logo 1 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log1.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 1" />
+            </div>
+          </div>
+
+          <!-- Logo 2 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log2.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 2" />
+            </div>
+          </div>
+
+          <!-- Logo 3 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log3.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 3" />
+            </div>
+          </div>
+
+          <!-- Logo 4 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log4.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 4" />
+            </div>
+          </div>
+
+          <!-- Logo 5 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log5.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 5" />
+            </div>
+          </div>
+
+          <!-- Logo 6 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log6.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 6" />
+            </div>
+          </div>
+
+          <!-- Logo 7 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log7.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 7" />
+            </div>
+          </div>
+
+          <!-- Logo 8 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log8.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 8" />
+            </div>
+          </div>
+
+          <!-- Logo 9 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/log9.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 9" />
+            </div>
+          </div>
+
+          <!-- Logo 10 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/logo10.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 10" />
+            </div>
+          </div>
+
+          <!-- Logo 11 -->
+          <div class="slide px-2">
+            <div class="bg-white rounded-lg p-4 shadow-md hover:shadow-lg transition h-full flex items-center justify-center border border-slate-100">
+              <img src="/Images/Logos/logo11.png" class="w-3/4 h-20 sm:h-24 object-contain" alt="Client Logo 11" />
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-[#022f36] text-white py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div>
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center font-bold">PK</div>
+          <div>
+            <div class="font-semibold">PK Waterproofing</div>
+            <div class="text-sm text-white/70">Protected for the Future</div>
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-white/70 max-w-sm">We provide reliable waterproofing services with professional
+          supervision and strict safety protocols.</p>
+      </div>
+
+      <div>
+        <div class="font-semibold">Quick links</div>
+        <ul class="mt-3 space-y-2 text-sm text-white/80">
+          <li><a href="#services" class="hover:underline">Services</a></li>
+          <li><a href="#projects" class="hover:underline">Projects</a></li>
+          <li><a href="#about" class="hover:underline">About</a></li>
+          <li><a href="#contact" class="hover:underline">Contact</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="font-semibold">Contact</div>
+        <div class="mt-3 text-sm text-white/80">
+          <div>PK Building 12/437, Karad Paramba, Malappuram - 673632</div>
+          <div class="mt-2">Phone: 703 426 6336</div>
+          <div class="mt-1">Email: pkconstructionsolutions@gmail.com</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-6 text-center text-white/60 text-sm">© <span id="year"></span>2025 PK Waterproofing Solution. All rights
+      reserved.</div>
+  </footer>
+
+  <!-- ✅ JavaScript -->
+  <script>
+    const toggleBtn = document.getElementById("menuToggle");
+    const mobileMenu = document.getElementById("mobileMenu");
+    toggleBtn.addEventListener("click", () => mobileMenu.classList.toggle("hidden"));
+
+    // Slider functionality
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const sliderWrapper = document.getElementById('sliderWrapper');
+    const dotsContainer = document.getElementById('sliderDots');
+
+    // Calculate slides per view based on screen size
+    function getSlidesPerView() {
+      if (window.innerWidth >= 1280) return 4;
+      if (window.innerWidth >= 1024) return 3;
+      if (window.innerWidth >= 640) return 1.5;
+      return 1;
+    }
+
+    // Create dots (one for each slide)
+    function createDots() {
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToSlide(i);
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    // Update slider position
+    function updateSlider() {
+      const slidesPerView = getSlidesPerView();
+      const slideWidth = 100 / slidesPerView;
+      sliderWrapper.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+
+      // Update dots
+      const dots = document.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentSlide);
+      });
+    }
+
+    // Move slide (with loop)
+    function moveSlide(direction) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalSlides - slidesPerView;
+
+      // Move by 1 slide at a time
+      currentSlide += direction;
+
+      // Loop back to beginning or end
+      if (currentSlide < 0) {
+        currentSlide = maxSlide;
+      } else if (currentSlide > maxSlide) {
+        currentSlide = 0; // Loop back to start
+      }
+
+      updateSlider();
+    }
+
+    // Go to specific slide
+    function goToSlide(dotIndex) {
+      currentSlide = dotIndex;
+      updateSlider();
+    }
+
+    // Auto play
+    let autoPlayInterval;
+    function startAutoPlay() {
+      autoPlayInterval = setInterval(() => {
+        const slidesPerView = getSlidesPerView();
+        const maxSlide = totalSlides - slidesPerView;
+        if (currentSlide < maxSlide) {
+          moveSlide(1);
+        } else {
+          stopAutoPlay(); // Stop when reaching the end
+        }
+      }, 3000); // Auto-advance every 3 seconds
+    }
+
+    function stopAutoPlay() {
+      clearInterval(autoPlayInterval);
+    }
+
+    // Touch/swipe support (only forward swipe)
+    let touchStartX = 0;
+    let touchEndX = 0;
+
+    sliderWrapper.addEventListener('touchstart', (e) => {
+      touchStartX = e.changedTouches[0].screenX;
+      stopAutoPlay();
+    });
+
+    sliderWrapper.addEventListener('touchend', (e) => {
+      touchEndX = e.changedTouches[0].screenX;
+      handleSwipe();
+      startAutoPlay();
+    });
+
+    function handleSwipe() {
+      // Allow both swipe directions
+      if (touchStartX - touchEndX > 50) {
+        moveSlide(1);
+      } else if (touchEndX - touchStartX > 50) {
+        moveSlide(-1);
+      }
+    }
+
+    // Initialize slider
+    window.addEventListener('load', () => {
+      createDots();
+      updateSlider();
+      startAutoPlay();
+    });
+
+    // Handle window resize
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        currentSlide = 0;
+        createDots();
+        updateSlider();
+      }, 250);
+    });
+
+    // Stop autoplay on hover
+    sliderWrapper.addEventListener('mouseenter', stopAutoPlay);
+    sliderWrapper.addEventListener('mouseleave', startAutoPlay);
+
+
+    // Data: Services -> Categories -> Photos
+    const data = {
+      exterior: {
+        title: "Exterior Waterproofing",
+        categories: {
+          "App Membrane Sheet": [ "/Images/services/E-App/1000056551.jpg", "/Images/services/E-App/1000056571.jpg","/Images/services/E-App/IMG-20251021-WA0025.jpg","Images/services/E-App/1.jpg","Images/services/E-App/2.jpg","/Images/services/E-App/IMG.png"],
+          "PU Coating": ["/Images/services/E-PU/1.jpg", "/Images/services/E-PU/2.jpg", "/Images/services/E-PU/3.jpg","Images/services/E-PU/4.jpg","Images/services/E-PU/5.jpg","Images/services/E-PU/6.png"],
+          "2K Coating": ["/Images/services/E-2K/1.png", "/Images/services/E-2K/2.png", "/Images/services/E-2K/3.png","/Images/services/E-2K/4.jpg","/Images/services/E-2K/5.jpg","/Images/services/E-2K/6.jpg","/Images/services/E-2K/7.jpg"]
+        }
+      },
+      bathroom: {
+        title: "Bathroom Waterproofing",
+        categories: {
+          "App Membrane Sheet": ["/Images/services/App/App1.jpg", "/Images/services/App/App2.jpg", "/Images/services/App/App3.jpg", "/Images/services/App/App4.jpg"],
+          "2K Coating": ["/Images/services/B-2K/1.jpg", "/Images/services/B-2K/2.jpg", "/Images/services/B-2K/3.jpg","/Images/services/B-2K/4.jpg","/Images/services/B-2K/5.jpg","/Images/services/B-2K/6.jpg"]
+        }
+      },
+      epoxy: {
+        title: "Epoxy Waterproofing",
+        categories: {
+          "Epoxy Coating": ["Images/services/Epoxy/1.png", "Images/services/Epoxy/2.png", "Images/services/Epoxy/3.png","Images/services/Epoxy/4.png"]
+        }
+      },
+      pressure: {
+        title: "Pressure WaterProofing",
+        categories: {
+          "Crack Injection": ["/Images/services/Pressure/1.jpg", "/Images/services/Pressure/2.jpg", "/Images/services/Pressure/3.jpg","/Images/services/Pressure/4.jpg","/Images/services/Pressure/5.jpg","/Images/services/Pressure/6.jpg"]
+        }
+      },
+      other: {
+        title: "Other Waterproofing",
+        categories: {
+          "Filling and Coating": ["/Images/other1.jpg", "/Images/other2.jpg", "/Images/other3.jpg"],
+          "Damp Proofing": ["/Images/other4.jpg", "/Images/other5.jpg", "/Images/other6.jpg"],
+          "Retaining Wall Proofing": ["/Images/other4.jpg", "/Images/other5.jpg", "/Images/other6.jpg"],
+          "Tank, Pool WaterProofing": ["/Images/other4.jpg", "/Images/other5.jpg", "/Images/other6.jpg"]
+        }
+      },
+    };
+
+
+
+    let currentServiceType = '';
+    let activeCategory = 'all';
+
+    function showService(type) {
+      currentServiceType = type;
+      document.getElementById("services").classList.add("hidden");
+      const gallery = document.getElementById("servicePhotos");
+      gallery.classList.remove("hidden");
+      document.getElementById("serviceTitle").innerText = data[type].title;
+
+      const categoryContainer = document.getElementById("categoryContainer");
+      categoryContainer.innerHTML = "";
+
+      // Create "Show All" button
+      const allBtn = document.createElement("button");
+      allBtn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
+      allBtn.innerText = "Show All";
+      allBtn.onclick = () => filterPhotos(type, 'all', allBtn);
+      categoryContainer.appendChild(allBtn);
+
+      // Create category filter buttons
+      Object.keys(data[type].categories).forEach(cat => {
+        const btn = document.createElement("button");
+        btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
+        btn.innerText = cat;
+        btn.onclick = () => filterPhotos(type, cat, btn);
+        categoryContainer.appendChild(btn);
+      });
+
+      // Show all photos initially
+      activeCategory = 'all';
+      displayPhotos(type, 'all');
+    }
+
+    function filterPhotos(type, category, clickedBtn) {
+      activeCategory = category;
+      
+      // Update button styles
+      const buttons = document.querySelectorAll('#categoryContainer button');
+      buttons.forEach(btn => {
+        if (btn === clickedBtn) {
+          if (category === 'all') {
+            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
+          } else {
+            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
+          }
+        } else {
+          if (btn.innerText === 'Show All') {
+            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
+          } else {
+            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
+          }
+        }
+      });
+
+      displayPhotos(type, category);
+    }
+
+    function displayPhotos(type, category) {
+      const photoContainer = document.getElementById("photoContainer");
+      photoContainer.innerHTML = "";
+
+      let allImages = [];
+      
+      if (category === 'all') {
+        // Show all photos from all categories
+        Object.keys(data[type].categories).forEach(cat => {
+          allImages = allImages.concat(data[type].categories[cat]);
+        });
+      } else {
+        // Show photos from selected category
+        allImages = data[type].categories[category];
+      }
+
+      allImages.forEach(src => {
+        const div = document.createElement("div");
+        div.className = "group relative overflow-hidden rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer bg-white";
+        
+        const img = document.createElement("img");
+        img.src = src;
+        img.className = "w-full h-64 sm:h-72 lg:h-80 object-cover group-hover:scale-110 transition-transform duration-300";
+        img.onclick = () => openLightbox(src);
+        
+        const overlay = document.createElement("div");
+        overlay.className = "absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4";
+        
+        const viewText = document.createElement("span");
+        viewText.className = "text-white font-semibold text-sm sm:text-base flex items-center gap-2";
+        viewText.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m0 0v6m0-6h6m-6 0H4" />
+          </svg>
+          View Full Image
+        `;
+        
+        overlay.appendChild(viewText);
+        div.appendChild(img);
+        div.appendChild(overlay);
+        photoContainer.appendChild(div);
+      });
+    }
+
+    function openLightbox(src) {
+      document.getElementById("lightbox").classList.remove("hidden");
+      document.getElementById("lightboxImg").src = src;
+      document.body.style.overflow = 'hidden'; // Prevent background scroll
+    }
+
+    function closeLightbox() {
+      document.getElementById("lightbox").classList.add("hidden");
+      document.body.style.overflow = 'auto'; // Restore scroll
+    }
+
+    function hidePhotos() {
+      document.getElementById("servicePhotos").classList.add("hidden");
+      document.getElementById("services").classList.remove("hidden");
+      document.body.style.overflow = 'auto'; // Restore scroll
+    }
+
+    // Projects Slider functionality
+    let currentProjectSlide = 0;
+    const projectSlides = document.querySelectorAll('#projectsSliderWrapper .slide');
+    const totalProjectSlides = projectSlides.length;
+    const projectsSliderWrapper = document.getElementById('projectsSliderWrapper');
+    const projectsDotsContainer = document.getElementById('projectsSliderDots');
+
+    // Create dots for projects (one for each slide)
+    function createProjectDots() {
+      projectsDotsContainer.innerHTML = '';
+      for (let i = 0; i < totalProjectSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToProjectSlide(i);
+        projectsDotsContainer.appendChild(dot);
+      }
+    }
+
+    // Update projects slider position
+    function updateProjectSlider() {
+      const slidesPerView = getSlidesPerView();
+      const slideWidth = 100 / slidesPerView;
+      projectsSliderWrapper.style.transform = `translateX(-${currentProjectSlide * slideWidth}%)`;
+
+      // Update dots
+      const dots = document.querySelectorAll('#projectsSliderDots .dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentProjectSlide);
+      });
+    }
+
+    // Move project slide (both forward and backward, no loop)
+    function moveProjectSlide(direction) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalProjectSlides - slidesPerView;
+
+      currentProjectSlide += direction;
+
+      // Stop at boundaries (no looping)
+      if (currentProjectSlide < 0) {
+        currentProjectSlide = 0;
+      } else if (currentProjectSlide > maxSlide) {
+        currentProjectSlide = maxSlide;
+        stopProjectAutoPlay(); // Stop autoplay when reaching the end
+      }
+
+      updateProjectSlider();
+    }
+
+    // Go to specific project slide
+    function goToProjectSlide(dotIndex) {
+      currentProjectSlide = dotIndex;
+      updateProjectSlider();
+    }
+
+    // Auto play projects
+    let autoPlayProjectInterval;
+    function startProjectAutoPlay() {
+      autoPlayProjectInterval = setInterval(() => {
+        const slidesPerView = getSlidesPerView();
+        const maxSlide = totalProjectSlides - slidesPerView;
+        if (currentProjectSlide < maxSlide) {
+          moveProjectSlide(1);
+        } else {
+          stopProjectAutoPlay(); // Stop when reaching the end
+        }
+      }, 4000); // Auto-advance every 4 seconds
+    }
+
+    function stopProjectAutoPlay() {
+      clearInterval(autoPlayProjectInterval);
+    }
+
+    // Touch/swipe support for projects (only forward swipe)
+    let touchStartXProjects = 0;
+    let touchEndXProjects = 0;
+
+    projectsSliderWrapper.addEventListener('touchstart', (e) => {
+      touchStartXProjects = e.changedTouches[0].screenX;
+      stopProjectAutoPlay();
+    });
+
+    projectsSliderWrapper.addEventListener('touchend', (e) => {
+      touchEndXProjects = e.changedTouches[0].screenX;
+      handleProjectSwipe();
+      startProjectAutoPlay();
+    });
+
+    function handleProjectSwipe() {
+      // Allow both swipe directions
+      if (touchStartXProjects - touchEndXProjects > 50) {
+        moveProjectSlide(1);
+      } else if (touchEndXProjects - touchStartXProjects > 50) {
+        moveProjectSlide(-1);
+      }
+    }
+
+    // Initialize projects slider
+    window.addEventListener('load', () => {
+      createProjectDots();
+      updateProjectSlider();
+      startProjectAutoPlay();
+    });
+
+    // Stop autoplay on hover
+    projectsSliderWrapper.addEventListener('mouseenter', stopProjectAutoPlay);
+    projectsSliderWrapper.addEventListener('mouseleave', startProjectAutoPlay);
+
+    // ===== Reviews Slider =====
+    let currentReviewSlide = 0;
+    const reviewSlides = document.querySelectorAll('#reviewsSliderWrapper .slide');
+    const totalReviewSlides = reviewSlides.length;
+    const reviewsSliderWrapper = document.getElementById('reviewsSliderWrapper');
+    const reviewsDotsContainer = document.getElementById('reviewsSliderDots');
+    let reviewAutoPlayInterval;
+
+    // Create dots for reviews
+    function createReviewDots() {
+      reviewsDotsContainer.innerHTML = '';
+      for (let i = 0; i < totalReviewSlides; i++) {
+        const dot = document.createElement('div');
+        dot.className = 'dot';
+        if (i === 0) dot.classList.add('active');
+        dot.onclick = () => goToReviewSlide(i);
+        reviewsDotsContainer.appendChild(dot);
+      }
+    }
+
+    // Update review slider position
+    function updateReviewSlider() {
+      const slidesPerView = getSlidesPerView();
+      const slideWidth = 100 / slidesPerView;
+      reviewsSliderWrapper.style.transform = `translateX(-${currentReviewSlide * slideWidth}%)`;
+
+      // Update dots
+      const dots = reviewsDotsContainer.querySelectorAll('.dot');
+      dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === currentReviewSlide);
+      });
+    }
+
+    // Move review slide
+    function moveReviewSlide(direction) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalReviewSlides - slidesPerView;
+
+      currentReviewSlide += direction;
+
+      // Stop at boundaries (no looping)
+      if (currentReviewSlide < 0) {
+        currentReviewSlide = 0;
+      } else if (currentReviewSlide > maxSlide) {
+        currentReviewSlide = maxSlide;
+        stopReviewAutoPlay();
+      }
+
+      updateReviewSlider();
+    }
+
+    // Go to specific review slide
+    function goToReviewSlide(dotIndex) {
+      currentReviewSlide = dotIndex;
+      updateReviewSlider();
+    }
+
+    // Review Autoplay
+    function startReviewAutoPlay() {
+      stopReviewAutoPlay();
+      reviewAutoPlayInterval = setInterval(() => {
+        moveReviewSlide(1);
+      }, 4000); // 4 seconds
+    }
+
+    function stopReviewAutoPlay() {
+      if (reviewAutoPlayInterval) {
+        clearInterval(reviewAutoPlayInterval);
+      }
+    }
+
+    // Touch support for reviews
+    let reviewTouchStartX = 0;
+    let reviewTouchEndX = 0;
+
+    reviewsSliderWrapper.addEventListener('touchstart', (e) => {
+      reviewTouchStartX = e.changedTouches[0].screenX;
+    });
+
+    reviewsSliderWrapper.addEventListener('touchend', (e) => {
+      reviewTouchEndX = e.changedTouches[0].screenX;
+      if (reviewTouchStartX - reviewTouchEndX > 50) {
+        moveReviewSlide(1); // Swipe left
+      }
+      if (reviewTouchEndX - reviewTouchStartX > 50) {
+        moveReviewSlide(-1); // Swipe right
+      }
+    });
+
+    // Initialize review slider on load
+    window.addEventListener('load', () => {
+      createReviewDots();
+      updateReviewSlider();
+      startReviewAutoPlay();
+    });
+
+    // Stop autoplay on hover for reviews
+    reviewsSliderWrapper.addEventListener('mouseenter', stopReviewAutoPlay);
+    reviewsSliderWrapper.addEventListener('mouseleave', startReviewAutoPlay);
+
+    // ===== Client Logos Slider (Continuous Auto-slide) =====
+    let currentLogoSlide = 0;
+    const logoSlides = document.querySelectorAll('#logosSliderWrapper .slide');
+    const totalLogoSlides = logoSlides.length;
+    const logosSliderWrapper = document.getElementById('logosSliderWrapper');
+    let logoAutoPlayInterval;
+
+    // Update logo slider position
+    function updateLogoSlider() {
+      const slidesPerView = getSlidesPerView();
+      const slideWidth = 100 / slidesPerView;
+      logosSliderWrapper.style.transform = `translateX(-${currentLogoSlide * slideWidth}%)`;
+    }
+
+    // Move logo slide (with continuous loop)
+    function moveLogoSlide() {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalLogoSlides - slidesPerView;
+
+      currentLogoSlide++;
+
+      // Loop back to start when reaching the end
+      if (currentLogoSlide > maxSlide) {
+        currentLogoSlide = 0;
+      }
+
+      updateLogoSlider();
+    }
+
+    // Logo Continuous Autoplay
+    function startLogoAutoPlay() {
+      if (logoAutoPlayInterval) {
+        clearInterval(logoAutoPlayInterval);
+      }
+      logoAutoPlayInterval = setInterval(() => {
+        moveLogoSlide();
+      }, 2500); // Auto-slide every 2.5 seconds
+    }
+
+    // Initialize logo slider on load
+    window.addEventListener('load', () => {
+      updateLogoSlider();
+      startLogoAutoPlay();
+    });
+  </script>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+</body>
+
+</html>
