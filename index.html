@@ -165,7 +165,7 @@
   <section class="relative h-[60vh] md:h-screen flex items-center">
     <video autoplay muted loop playsinline
       class="absolute inset-0 w-full h-full object-cover transition-all duration-500">
-      <source src="Video/pk .mp4" type="video/mp4" />
+      <source src="video/pk.mp4" type="video/mp4" />
     </video>
 
     <div class="overlay absolute inset-0"></div>
@@ -1268,25 +1268,22 @@
       const categoryContainer = document.getElementById("categoryContainer");
       categoryContainer.innerHTML = "";
 
-      // Create "Show All" button
-      const allBtn = document.createElement("button");
-      allBtn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
-      allBtn.innerText = "Show All";
-      allBtn.onclick = () => filterPhotos(type, 'all', allBtn);
-      categoryContainer.appendChild(allBtn);
-
       // Create category filter buttons
-      Object.keys(data[type].categories).forEach(cat => {
+      const categories = Object.keys(data[type].categories);
+      categories.forEach((cat, index) => {
         const btn = document.createElement("button");
-        btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
+        btn.className = index === 0 
+          ? "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]"
+          : "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
         btn.innerText = cat;
         btn.onclick = () => filterPhotos(type, cat, btn);
         categoryContainer.appendChild(btn);
       });
 
-      // Show all photos initially
-      activeCategory = 'all';
-      displayPhotos(type, 'all');
+      // Show first category initially
+      const firstCategory = categories[0];
+      activeCategory = firstCategory;
+      displayPhotos(type, firstCategory);
     }
 
     function filterPhotos(type, category, clickedBtn) {
@@ -1296,17 +1293,9 @@
       const buttons = document.querySelectorAll('#categoryContainer button');
       buttons.forEach(btn => {
         if (btn === clickedBtn) {
-          if (category === 'all') {
-            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
-          } else {
-            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
-          }
+          btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#ff5722] text-white shadow-md hover:bg-[#f4511e]";
         } else {
-          if (btn.innerText === 'Show All') {
-            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
-          } else {
-            btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
-          }
+          btn.className = "px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg font-medium transition text-sm sm:text-base bg-[#1e293b] text-white hover:bg-[#334155] shadow-md";
         }
       });
 
@@ -1317,17 +1306,8 @@
       const photoContainer = document.getElementById("photoContainer");
       photoContainer.innerHTML = "";
 
-      let allImages = [];
-      
-      if (category === 'all') {
-        // Show all photos from all categories
-        Object.keys(data[type].categories).forEach(cat => {
-          allImages = allImages.concat(data[type].categories[cat]);
-        });
-      } else {
-        // Show photos from selected category
-        allImages = data[type].categories[category];
-      }
+      // Show photos from selected category
+      const allImages = data[type].categories[category];
 
       allImages.forEach(src => {
         const div = document.createElement("div");
