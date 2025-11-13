@@ -128,14 +128,14 @@
     </div>
 
     <div class="hidden md:flex items-center space-x-6">
-      <a href="#services" class="text-black text-sm font-medium hover:text-gray-200 transition">Services</a>
-      <a href="#projects" class="text-black text-sm font-medium hover:text-gray-200 transition">Projects</a>
-      <a href="#about" class="text-black text-sm font-medium hover:text-gray-200 transition">About</a>
-      <a href="#contact" class="text-black text-sm font-medium hover:text-gray-200 transition">Contact</a>
+      <a href="services" class="text-black text-sm font-medium hover:text-gray-200 transition">Services</a>
+      <a href="projects" class="text-black text-sm font-medium hover:text-gray-200 transition">Projects</a>
+      <a href="about" class="text-black text-sm font-medium hover:text-gray-200 transition">About</a>
+      <a href="contact" class="text-black text-sm font-medium hover:text-gray-200 transition">Contact</a>
     </div>
 
     <div class="hidden md:block">
-      <a href="#contact"
+      <a href="contact"
         class="bg-indigo-800 hover:bg-indigo-900 text-white px-5 py-2 rounded-full font-medium text-sm shadow-md">Book
         Your Order</a>
     </div>
@@ -1606,6 +1606,21 @@
     window.addEventListener('load', () => {
       updateLogoSlider();
       startLogoAutoPlay();
+    });
+
+    // Smooth scroll without hash in URL
+    document.addEventListener('DOMContentLoaded', function() {
+      const links = document.querySelectorAll('a[href^="#"]');
+      links.forEach(link => {
+        link.addEventListener('click', function(e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href').substring(1);
+          const targetElement = document.getElementById(targetId);
+          if (targetElement) {
+            targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
     });
   </script>
 
