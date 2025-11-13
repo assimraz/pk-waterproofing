@@ -2,9 +2,6 @@
 ngrok.exe
 ngrok.zip
 
-# Large video files
-Video/
-
 # OS files
 .DS_Store
 Thumbs.db
