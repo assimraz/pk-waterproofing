@@ -421,8 +421,6 @@
         <!-- Slider Wrapper -->
         <div class="slider-wrapper px-8" id="projectsSliderWrapper">
           <!-- Project 1 -->
-
-          <!-- Project 2 -->
           <div class="slide px-2">
             <div
               class="bg-white rounded-2xl overflow-hidden shadow-lg transform hover:-translate-y-2 transition h-full">
@@ -1334,9 +1332,20 @@
     window.addEventListener('resize', () => {
       clearTimeout(resizeTimer);
       resizeTimer = setTimeout(() => {
+        // Reset services slider
         currentSlide = 0;
         createDots();
         updateSlider();
+        
+        // Reset projects slider
+        currentProjectSlide = 0;
+        createProjectDots();
+        updateProjectSlider();
+        
+        // Reset reviews slider
+        currentReviewSlide = 0;
+        createReviewDots();
+        updateReviewSlider();
       }, 250);
     });
 
@@ -1494,15 +1503,18 @@
 
     // Projects Slider functionality
     let currentProjectSlide = 0;
-    const projectSlides = document.querySelectorAll('#projectsSliderWrapper .slide');
-    const totalProjectSlides = projectSlides.length;
     const projectsSliderWrapper = document.getElementById('projectsSliderWrapper');
+    const projectSlides = projectsSliderWrapper.querySelectorAll('.slide');
+    const totalProjectSlides = projectSlides.length;
     const projectsDotsContainer = document.getElementById('projectsSliderDots');
 
-    // Create dots for projects (one for each slide)
+    // Create dots for projects (only for valid slide positions)
     function createProjectDots() {
       projectsDotsContainer.innerHTML = '';
-      for (let i = 0; i < totalProjectSlides; i++) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalProjectSlides - slidesPerView;
+      
+      for (let i = 0; i <= maxSlide; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot';
         if (i === 0) dot.classList.add('active');
@@ -1603,16 +1615,19 @@
 
     // ===== Reviews Slider =====
     let currentReviewSlide = 0;
-    const reviewSlides = document.querySelectorAll('#reviewsSliderWrapper .slide');
-    const totalReviewSlides = reviewSlides.length;
     const reviewsSliderWrapper = document.getElementById('reviewsSliderWrapper');
+    const reviewSlides = reviewsSliderWrapper.querySelectorAll('.slide');
+    const totalReviewSlides = reviewSlides.length;
     const reviewsDotsContainer = document.getElementById('reviewsSliderDots');
     let reviewAutoPlayInterval;
 
-    // Create dots for reviews
+    // Create dots for reviews (only for valid slide positions)
     function createReviewDots() {
       reviewsDotsContainer.innerHTML = '';
-      for (let i = 0; i < totalReviewSlides; i++) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalReviewSlides - slidesPerView;
+      
+      for (let i = 0; i <= maxSlide; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot';
         if (i === 0) dot.classList.add('active');
