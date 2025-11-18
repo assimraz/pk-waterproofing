@@ -5,6 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>P.K. Waterproofing Solutions Pvt. Ltd.</title>
+  <link rel="icon" type="image/png" href="Images/icon.png" />
   <script src="https://cdn.tailwindcss.com"></script>
 
   <!-- Swiper CSS -->
@@ -1526,18 +1527,15 @@
 
     // Projects Slider functionality
     let currentProjectSlide = 0;
-    const projectsSliderWrapper = document.getElementById('projectsSliderWrapper');
-    const projectSlides = projectsSliderWrapper.querySelectorAll('.slide');
+    const projectSlides = document.querySelectorAll('#projectsSliderWrapper .slide');
     const totalProjectSlides = projectSlides.length;
+    const projectsSliderWrapper = document.getElementById('projectsSliderWrapper');
     const projectsDotsContainer = document.getElementById('projectsSliderDots');
 
-    // Create dots for projects (only for valid slide positions)
+    // Create dots for projects (one for each slide)
     function createProjectDots() {
       projectsDotsContainer.innerHTML = '';
-      const slidesPerView = getSlidesPerView();
-      const maxSlide = totalProjectSlides - slidesPerView;
-      
-      for (let i = 0; i <= maxSlide; i++) {
+      for (let i = 0; i < totalProjectSlides; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot';
         if (i === 0) dot.classList.add('active');
