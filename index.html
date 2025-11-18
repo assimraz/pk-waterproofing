@@ -1252,9 +1252,9 @@
 
     // Slider functionality
     let currentSlide = 0;
-    const slides = document.querySelectorAll('.slide');
-    const totalSlides = slides.length;
     const sliderWrapper = document.getElementById('sliderWrapper');
+    const slides = sliderWrapper.querySelectorAll('.slide');
+    const totalSlides = slides.length;
     const dotsContainer = document.getElementById('sliderDots');
 
     // Calculate slides per view based on screen size
@@ -1265,10 +1265,14 @@
       return 1;                                     // matches 100%
     }
 
-    // Create dots (one for each slide)
+    // Create dots (only for valid slide positions)
     function createDots() {
       dotsContainer.innerHTML = '';
-      for (let i = 0; i < totalSlides; i++) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalSlides - slidesPerView;
+      const numberOfDots = maxSlide + 1; // Number of valid positions
+      
+      for (let i = 0; i <= maxSlide; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot';
         if (i === 0) dot.classList.add('active');
@@ -1318,13 +1322,7 @@
     let autoPlayInterval;
     function startAutoPlay() {
       autoPlayInterval = setInterval(() => {
-        const slidesPerView = getSlidesPerView();
-        const maxSlide = totalSlides - slidesPerView;
-        if (currentSlide < maxSlide) {
-          moveSlide(1);
-        } else {
-          stopAutoPlay(); // Stop when reaching the end
-        }
+        moveSlide(1); // Just move forward, loop logic handles wrapping
       }, 3000); // Auto-advance every 3 seconds
     }
 
@@ -1528,15 +1526,18 @@
 
     // Projects Slider functionality
     let currentProjectSlide = 0;
-    const projectSlides = document.querySelectorAll('#projectsSliderWrapper .slide');
-    const totalProjectSlides = projectSlides.length;
     const projectsSliderWrapper = document.getElementById('projectsSliderWrapper');
+    const projectSlides = projectsSliderWrapper.querySelectorAll('.slide');
+    const totalProjectSlides = projectSlides.length;
     const projectsDotsContainer = document.getElementById('projectsSliderDots');
 
-    // Create dots for projects (one for each slide)
+    // Create dots for projects (only for valid slide positions)
     function createProjectDots() {
       projectsDotsContainer.innerHTML = '';
-      for (let i = 0; i < totalProjectSlides; i++) {
+      const slidesPerView = getSlidesPerView();
+      const maxSlide = totalProjectSlides - slidesPerView;
+      
+      for (let i = 0; i <= maxSlide; i++) {
         const dot = document.createElement('div');
         dot.className = 'dot';
         if (i === 0) dot.classList.add('active');
