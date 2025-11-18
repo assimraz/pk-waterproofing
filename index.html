@@ -1536,19 +1536,18 @@
       });
     }
 
-    // Move project slide (both forward and backward, no loop)
+    // Move project slide (with looping)
     function moveProjectSlide(direction) {
       const slidesPerView = getSlidesPerView();
       const maxSlide = totalProjectSlides - slidesPerView;
 
       currentProjectSlide += direction;
 
-      // Stop at boundaries (no looping)
+      // Loop back to beginning or end
       if (currentProjectSlide < 0) {
-        currentProjectSlide = 0;
-      } else if (currentProjectSlide > maxSlide) {
         currentProjectSlide = maxSlide;
-        stopProjectAutoPlay(); // Stop autoplay when reaching the end
+      } else if (currentProjectSlide > maxSlide) {
+        currentProjectSlide = 0; // Loop back to start
       }
 
       updateProjectSlider();
@@ -1564,13 +1563,7 @@
     let autoPlayProjectInterval;
     function startProjectAutoPlay() {
       autoPlayProjectInterval = setInterval(() => {
-        const slidesPerView = getSlidesPerView();
-        const maxSlide = totalProjectSlides - slidesPerView;
-        if (currentProjectSlide < maxSlide) {
-          moveProjectSlide(1);
-        } else {
-          stopProjectAutoPlay(); // Stop when reaching the end
-        }
+        moveProjectSlide(1); // Just move forward, loop logic handles wrapping
       }, 4000); // Auto-advance every 4 seconds
     }
 
@@ -1649,19 +1642,18 @@
       });
     }
 
-    // Move review slide
+    // Move review slide (with looping)
     function moveReviewSlide(direction) {
       const slidesPerView = getSlidesPerView();
       const maxSlide = totalReviewSlides - slidesPerView;
 
       currentReviewSlide += direction;
 
-      // Stop at boundaries (no looping)
+      // Loop back to beginning or end
       if (currentReviewSlide < 0) {
-        currentReviewSlide = 0;
-      } else if (currentReviewSlide > maxSlide) {
         currentReviewSlide = maxSlide;
-        stopReviewAutoPlay();
+      } else if (currentReviewSlide > maxSlide) {
+        currentReviewSlide = 0; // Loop back to start
       }
 
       updateReviewSlider();
