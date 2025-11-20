@@ -1780,15 +1780,22 @@
           // Create WhatsApp message
           const message = `Hello! I'm interested in your waterproofing services.\n\nName: ${name}\nPhone: ${phone}\nPincode: ${pincode}`;
           
-          // WhatsApp number (replace with your number)
+          // WhatsApp number
           const whatsappNumber = '919846004669';
           
           // Create WhatsApp URL
           const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
           
-          // Open WhatsApp
-          window.open(whatsappUrl, '_blank');
+          // Open WhatsApp in new tab
+          const newWindow = window.open(whatsappUrl, '_blank');
+          
+          // Fallback if popup blocked
+          if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
+            window.location.href = whatsappUrl;
+          }
         });
+      } else {
+        console.error('Contact form not found');
       }
     });
   </script>
