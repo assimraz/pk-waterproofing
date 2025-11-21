@@ -380,11 +380,11 @@
 
         <ul class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3">
           <li class="bg-white p-4 rounded-lg shadow">
-            <div class="text-sm text-slate-500">10+ years</div>
+            <div class="text-sm text-slate-500">18+ years</div>
             <div class="font-semibold">Experience</div>
           </li>
           <li class="bg-white p-4 rounded-lg shadow">
-            <div class="text-sm text-slate-500">999+</div>
+            <div class="text-sm text-slate-500">9999+</div>
             <div class="font-semibold">Projects</div>
           </li>
           <li class="bg-white p-4 rounded-lg shadow">
@@ -1780,22 +1780,15 @@
           // Create WhatsApp message
           const message = `Hello! I'm interested in your waterproofing services.\n\nName: ${name}\nPhone: ${phone}\nPincode: ${pincode}`;
           
-          // WhatsApp number
+          // WhatsApp number (replace with your number)
           const whatsappNumber = '919846004669';
           
           // Create WhatsApp URL
           const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
           
-          // Open WhatsApp in new tab
-          const newWindow = window.open(whatsappUrl, '_blank');
-          
-          // Fallback if popup blocked
-          if (!newWindow || newWindow.closed || typeof newWindow.closed == 'undefined') {
-            window.location.href = whatsappUrl;
-          }
+          // Open WhatsApp
+          window.open(whatsappUrl, '_blank');
         });
-      } else {
-        console.error('Contact form not found');
       }
     });
   </script>
